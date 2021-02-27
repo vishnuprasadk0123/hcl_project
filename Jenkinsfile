@@ -9,7 +9,7 @@ pipeline {
 
     stage('Compile') {
       steps {
-        sh "mvn clean complie"
+        bat "mvn clean complie"
 
       }
 
@@ -17,7 +17,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh "mvn clean test"
+        bat "mvn clean test"
 
       }
 
@@ -25,7 +25,7 @@ pipeline {
     stage('Deploy') {
       steps {
 
-        sh "deployWARFile.yml"
+        bat "deployWARFile.yml"
 
       }
 
