@@ -9,7 +9,6 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'https://github.com/vishnuprasadk0123/hcl_project.git'
         sh 'clean install'
 
       }
