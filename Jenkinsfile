@@ -1,23 +1,31 @@
 pipeline {
   agent any
-  stage {
 
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
-    }
+  tools {
+    maven "M2_HOME"
+  }
+  stage {
 
     stage('Build') {
       steps {
-        sh 'M2_HOME'
-        sh 'mvn clean build'
+        sh 'https://github.com/vishnuprasadk0123/hcl_project.git'
+        sh 'mvn -Dmaven.test.failure.ignore=true clean complie'
 
       }
 
     }
-    stage('deploy') {
+
+    stage('Test') {
       steps {
+        sh 'https://github.com/vishnuprasadk0123/hcl_project.git'
+        sh 'mvn -Dmaven.test.failure.ignore=true clean test'
+
+      }
+
+    }
+    stage('Deploy') {
+      steps {
+        sh 'https://github.com/vishnuprasadk0123/hcl_project.git'
         sh 'deployWARFile.yml'
 
       }
