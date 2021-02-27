@@ -1,10 +1,6 @@
 pipeline {
 	agent any
 
-	tools {
-		maven "M2_HOME"
-	    			        
-		    }
 			stage{
 			
 				stage('Checkout') {
@@ -14,6 +10,7 @@ pipeline {
 			
 				stage('Build') {
 					steps {
+					    sh 'M2_HOME'
 						sh 'mvn clean build'
 				 
 						}
