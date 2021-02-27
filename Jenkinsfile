@@ -9,7 +9,7 @@ pipeline {
 
     stage('Compile') {
       steps {
-        bat "mvn clean complie"
+        bat "clean complie"
 
       }
 
@@ -17,7 +17,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        bat "mvn clean test"
+        bat "clean test"
 
       }
 
