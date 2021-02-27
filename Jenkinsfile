@@ -1,12 +1,31 @@
 pipeline {
   agent any
 
+  tools {
+    maven "maven3"
+
+  }
   stages {
 
-    stage('Build') {
+    stage('Compile') {
       steps {
-        sh "maven3"
-        sh "mvn clean install"
+        sh "mvn clean complie"
+
+      }
+
+    }
+
+    stage('Test') {
+      steps {
+        sh "mvn clean test"
+
+      }
+
+    }
+    stage('Deploy') {
+      steps {
+
+        sh "deployWARFile.yml"
 
       }
 
