@@ -10,28 +10,12 @@ pipeline {
     stage('Build') {
       steps {
         sh 'https://github.com/vishnuprasadk0123/hcl_project.git'
-        sh 'mvn clean complie'
+        sh 'clean install'
 
       }
 
     }
 
-    stage('Test') {
-      steps {
-        sh 'https://github.com/vishnuprasadk0123/hcl_project.git'
-        sh 'mvn clean test'
-
-      }
-
-    }
-    stage('Deploy') {
-      steps {
-        sh 'https://github.com/vishnuprasadk0123/hcl_project.git'
-        sh 'deployWARFile.yml'
-
-      }
-
-    }
 
   }
 
