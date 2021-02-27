@@ -19,7 +19,8 @@ pipeline {
 
     stage('Test') {
       steps {
-        bat "clean test"
+	    git 'https://github.com/vishnuprasadk0123/hcl_project.git'
+        bat "mvn -Dmaven.test.failure.ignore=true clean test"
 
       }
 
