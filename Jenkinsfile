@@ -7,9 +7,11 @@ pipeline {
   }
   stages {
 
-    stage('Compile') {
+    stage('Build') {
       steps {
-        bat "clean complie"
+	  
+	    git 'https://github.com/vishnuprasadk0123/hcl_project.git'
+        bat "mvn -Dmaven.test.failure.ignore=true clean package"
 
       }
 
