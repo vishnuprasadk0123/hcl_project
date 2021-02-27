@@ -10,7 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'https://github.com/vishnuprasadk0123/hcl_project.git'
-        sh 'mvn -Dmaven.test.failure.ignore=true clean complie'
+        sh 'mvn clean complie'
 
       }
 
@@ -19,7 +19,7 @@ pipeline {
     stage('Test') {
       steps {
         sh 'https://github.com/vishnuprasadk0123/hcl_project.git'
-        sh 'mvn -Dmaven.test.failure.ignore=true clean test'
+        sh 'mvn clean test'
 
       }
 
