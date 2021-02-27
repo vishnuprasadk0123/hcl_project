@@ -1,0 +1,5 @@
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: C:\Users\Arun\.jenkins\workspace\test\target\sample.war
+    dest: C:\Users\Arun\Desktop\Devops\apache\webapps\sample.war
+    mode: '0644'
