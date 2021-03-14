@@ -28,7 +28,7 @@ pipeline {
     stage('Deploy') {
       steps {
 
-        bat "deployWARFile.yml"
+        bat "ansible-playbook deployWARFile.yml"
 
       }
 
